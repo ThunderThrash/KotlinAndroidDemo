@@ -46,12 +46,17 @@ class MainActivity : AppCompatActivity() {
                 print(" ")
             }
 
+            println(" ")
+
             // Somma tutti i numeri
             var somma = 0
             for (numero in numeriPari) {
                 somma = somma + numero
             }
+
             println(somma) // 30
+
+            println(" ")
         }
     }
 
