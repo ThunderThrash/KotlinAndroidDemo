@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         btn_submit.setOnClickListener {
             val user_name = et_user_name.text;
             val password = et_password.text;
-            Toast.makeText(this@MainActivity, user_name, Toast.LENGTH_LONG).show()
+            Toast.makeText(this, user_name, Toast.LENGTH_LONG).show()
 
             // your code to validate the user_name and password combination
             // and verify the same
