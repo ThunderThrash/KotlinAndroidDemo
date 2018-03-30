@@ -2,6 +2,7 @@ package frameschool.net.kotlinandroiddemo
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
@@ -28,9 +29,19 @@ class MainActivity : AppCompatActivity() {
 
         // set on-click listener
         btn_submit.setOnClickListener {
-            val user_name = et_user_name.text;
-            val password = et_password.text;
-            Toast.makeText(this, user_name, Toast.LENGTH_LONG).show()
+
+            runOnUiThread{
+
+                Toast.makeText(this, et_user_name.text , Toast.LENGTH_SHORT).show()
+
+                val countDown: Array<Int> = arrayOf(3,2,1,0)
+                for (item in countDown){
+
+                    Log.e("MainActivity",item.toString())
+                }
+            }
+
+
 
             // your code to validate the user_name and password combination
             // and verify the same
