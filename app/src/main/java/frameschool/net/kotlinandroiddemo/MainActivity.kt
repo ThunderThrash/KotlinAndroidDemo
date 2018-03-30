@@ -2,7 +2,6 @@ package frameschool.net.kotlinandroiddemo
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
@@ -30,22 +29,29 @@ class MainActivity : AppCompatActivity() {
         // set on-click listener
         btn_submit.setOnClickListener {
 
-            runOnUiThread{
+            Toast.makeText(this, et_user_name.text , Toast.LENGTH_SHORT).show()
 
-                Toast.makeText(this, et_user_name.text , Toast.LENGTH_SHORT).show()
+            val numeriPari: Array<Int> = arrayOf(0, 2, 4, 6, 8, 10)
 
-                val countDown: Array<Int> = arrayOf(3,2,1,0)
-                for (item in countDown){
+            println(" ")
+            print(numeriPari[0]) // 0
+            print(" ")
+            print(numeriPari[3]) // 6
+            println(" ")
 
-                    Log.e("MainActivity",item.toString())
-                }
+
+            // Stamperà "0 2 4 6 8 10 "
+            for (numero in numeriPari) {
+                print(numero)
+                print(" ")
             }
 
-
-
-            // your code to validate the user_name and password combination
-            // and verify the same
-
+            // Somma tutti i numeri
+            var somma = 0
+            for (numero in numeriPari) {
+                somma = somma + numero
+            }
+            println(somma) // 30
         }
     }
 
