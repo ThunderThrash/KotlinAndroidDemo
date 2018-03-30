@@ -2,6 +2,7 @@ package frameschool.net.kotlinandroiddemo
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.text.TextUtils
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         var btn_reset = findViewById(R.id.btn_reset) as Button
         var btn_submit = findViewById(R.id.btn_submit) as Button
 
+
         btn_reset.setOnClickListener {
             // clearing user_name and password edit text views on reset button click
             et_user_name.setText("")
@@ -29,7 +31,13 @@ class MainActivity : AppCompatActivity() {
         // set on-click listener
         btn_submit.setOnClickListener {
 
-            Toast.makeText(this, et_user_name.text , Toast.LENGTH_SHORT).show()
+            var text = et_user_name.text.toString()
+            val pwd = et_password.text.toString()
+
+            text = if(TextUtils.isEmpty(text) ) "Error!"  else text
+            text = if(TextUtils.isEmpty(pwd) ) "Error!"  else text
+
+            Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
 
             val numeriPari: Array<Int> = arrayOf(0, 2, 4, 6, 8, 10)
 
